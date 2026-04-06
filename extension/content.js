@@ -76,7 +76,7 @@ function createPanel() {
 
     resultBox.value = "Đang dịch...";
     try {
-      const res = await fetch("http://localhost:3001/translate", {
+      const res = await fetch("https://fb-ai-translator.onrender.com/translate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
