@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Test dịch</h2>
+  <button onclick="test()">Test</button>
+  <pre id="result"></pre>
+
+  <script>
+    async function test() {
+      const res = await fetch("http://localhost:3000/translate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          text: "Magkano po shipping fee at ilang araw bago dumating?"
+        })
+      });
+
+      const data = await res.json();
+      document.getElementById("result").innerText =
+        JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
